@@ -3,12 +3,20 @@ os: linux
 
 files:
   - source: .
-    destination: /home/ec2-user/Node_deployment_22_4_2024
+    destination: /home/ec2-user/my-node-app
+    permissions:
+      - object: install_npm_packages.sh
+        pattern: 755
+      - object: start_pm2_service.sh
+        pattern: 755
 
-#hooks:
-   #ApplicationStart:
-   # - location: /var/my-node-app/app.js
-     # timeout: 300
-      #runas: root
-      #commands:
-     #   - pm2 start my-node-app
+hooks:
+  AfterInstall:
+    - location: /install_npm_packages.sh
+      timeout: 300
+      runas: root
+
+  ApplicationStart:
+    - location: /start_pm2_service.sh
+      timeout: 300
+      runas: root
