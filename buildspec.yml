@@ -36,3 +36,5 @@ artifacts:
     - node_modules/async/*
     - node_modules/lodash/*
     - appspec.yml
+    - install_npm_packages.sh
+    - start_pm2_service.sh
