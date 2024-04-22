@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+
+files:
+  - source: .
+    destination: /
+
+hooks:
+   ApplicationStart:
+   # - location: /var/my-node-app/app.js
+      timeout: 300
+      runas: root
+      commands:
+        - pm2 start my-node-app
