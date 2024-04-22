@@ -35,3 +35,4 @@ artifacts:
     - package.json
     - node_modules/async/*
     - node_modules/lodash/*
+    - appspec.yml
