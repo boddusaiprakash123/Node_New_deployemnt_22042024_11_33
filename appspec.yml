@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: .
-    destination: /
+    destination: /home/ec2-user/Node_deployment_22_4_2024
 
 #hooks:
    #ApplicationStart:
