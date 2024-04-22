@@ -1,12 +1,7 @@
 #!/bin/bash
 
-# Full path to the PM2 executable
-PM2_PATH="/usr/local/bin/pm2"
+# Navigate to the directory containing app.js
+cd /home/ec2-user/my-node-app
 
-# Check if PM2 exists at the specified path
-if [ -x "$PM2_PATH" ]; then
-  # Start PM2 service
-  $PM2_PATH start my-node-app
-else
-  echo "PM2 not found at $PM2_PATH. Please ensure PM2 is installed and its path is correct."
-fi
+# Start app.js with PM2
+pm2 start app.js --name my-node-app
