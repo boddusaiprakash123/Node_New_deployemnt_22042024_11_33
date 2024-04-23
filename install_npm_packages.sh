@@ -6,9 +6,6 @@ if [ -d "/root/my-node-app" ]; then
 
   # Install npm packages with force flag
   npm i --force
-
-  # Run the build script
-  npm run build
 else
   echo "Node.js application directory not found."
 fi
